@@ -1,0 +1,15 @@
+/* Links section */
+.links {
+    display: flex; /* Flex for links to align horizontally */
+    gap: 15px; /* Space between links */
+}
+
+.links a {
+    color: white; /* Change link color to white */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Optional: Set font size */
+}
+
+.links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

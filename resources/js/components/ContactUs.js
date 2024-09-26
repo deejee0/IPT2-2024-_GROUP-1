@@ -1,9 +1,9 @@
 import React from "react";
 import NavList from "./NavList";
 
-export default function Example() {
+export default function ContactUs() {
     return (
-        <div className="layout Home">
+        <div id="ContactUs" className="layout ContactUs">
             <NavList />
         </div>
     );

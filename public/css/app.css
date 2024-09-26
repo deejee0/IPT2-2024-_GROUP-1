@@ -11966,3 +11966,136 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  position: relative; /* Required for absolute positioning of children */
+  overflow: hidden; /* Ensure no overflow */
+  background: linear-gradient(to top right, white 55%, #8635ac 45%); /* Diagonal gradient */
+}
+
+/* Container */
+.layout {
+  background: rgba(134, 83, 172, 0.8); /* Semi-transparent background for better visibility */
+  display: flex; /* Use Flexbox for layout */
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Space between flex items */
+}
+
+/* Links section */
+.links {
+  display: flex; /* Flex for links to align horizontally */
+  gap: 15px; /* Space between links */
+}
+
+.links a {
+  color: white; /* Change link color to white */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 18px; /* Optional: Set font size */
+}
+
+.links a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Heading */
+h1, .h1 {
+  font-size: 56px; /* Set font size to 56px */
+  color: #000; /* Color of the heading */
+  margin: 0; /* Remove default margin */
+  flex: 1; /* Allow the heading to grow and take available space */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  position: relative; /* Required for absolute positioning of children */
+  overflow: hidden; /* Ensure no overflow */
+  background: linear-gradient(to top right, white 55%, #8635ac 45%); /* Diagonal gradient */
+}
+
+/* Container */
+.layout {
+  background: rgba(134, 83, 172, 0.8); /* Semi-transparent background for better visibility */
+  display: flex; /* Use Flexbox for layout */
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Space between flex items */
+}
+
+.login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+.login-form h2, .login-form .h2 {
+  margin-bottom: 1rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+.login-form .input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.login-form .input-group label {
+  display: none;
+}
+.login-form .input-group .input-icon {
+  position: relative;
+}
+.login-form .input-group .input-icon input {
+  width: 100%;
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.login-form .input-group .input-icon .icon-user,
+.login-form .input-group .input-icon .icon-lock {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #555;
+}
+.login-form .login-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 123, 255, 0.8705882353);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.login-form .login-btn:hover {
+  background-color: #333;
+}
+.login-form .signup-text {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+.login-form .signup-text a {
+  color: rgba(0, 123, 255, 0.8705882353);
+  text-decoration: none;
+}

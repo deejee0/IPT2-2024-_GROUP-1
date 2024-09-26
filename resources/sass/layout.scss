@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    position: relative; /* Required for absolute positioning of children */
+    overflow: hidden; /* Ensure no overflow */
+    background: linear-gradient(
+        to top right,
+        white 55%,
+        #8635ac 45%
+    ); /* Diagonal gradient */
+}
+
+/* Container */
+.layout {
+    background: rgba(
+        134,
+        83,
+        172,
+        0.8
+    ); /* Semi-transparent background for better visibility */
+
+    display: flex; /* Use Flexbox for layout */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Space between flex items */
+}
