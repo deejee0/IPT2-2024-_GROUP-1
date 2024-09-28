@@ -6,7 +6,7 @@ export default function Example() {
     return (
         <div className="Home">
             {/* Welcome message */}
-            <h1 className="welcome-message">WELCOME TO HEREVERD UNIVERSITY</h1>
+            <h1 className="welcome-message">Kiffy University</h1>
 
             {/* Links section */}
             <div className="links">

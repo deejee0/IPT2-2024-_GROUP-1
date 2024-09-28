@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     position: relative; /* Required for absolute positioning of children */
     overflow: hidden; /* Ensure no overflow */
-    background: linear-gradient(to top right, white 55%, hsl(225, 84%, 57%) 45%); /* Diagonal gradient */
+    background: linear-gradient(to top right, white 75%, #30000B 25%); /* Diagonal gradient */
 }
 
 /* Links section */
@@ -43,7 +43,7 @@ body {
 /* Welcome Message */
 .welcome-message {
     font-size: 48px; /* Font size for welcome message */
-    font-family: 'Helvetica Neue', sans-serif; /* Change to a nicer font */
+    font-family: 'Times New Roman', serif; /* Change to Times New Roman */
     font-weight: bold; /* Make the font bold */
     text-transform: uppercase; /* Make all letters capital */
     color: maroon; /* Change color to maroon */
