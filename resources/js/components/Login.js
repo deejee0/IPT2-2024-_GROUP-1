@@ -1,41 +1,38 @@
-import NavList from "./NavList";
+
 
 export default function Login() {
     return (
-        <div className="login">
-            <div className="login-container">
-                <form className="login-form">
-                    <h2>Login</h2>
-                    <div className="input-group">
-                        <label htmlFor="username">Username</label>
-                        <div className="input-icon">
-                            <input
-                                type="text"
-                                id="username"
-                                placeholder="Username"
-                            />
-                            <i className="icon-user"></i>
-                        </div>
+        <div className="school-login">
+            <div className="school-login-container">
+                <form className="school-login-form">
+                    <h2 className="school-heading">School Management System</h2>
+
+                    <div className="input-group school-input-group">
+                        <label htmlFor="username" className="school-label">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Enter your username"
+                            className="school-input"
+                        />
                     </div>
 
-                    <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                        <div className="input-icon">
-                            <input
-                                type="password"
-                                id="password"
-                                placeholder="Password"
-                            />
-                            <i className="icon-lock"></i>
-                        </div>
+                    <div className="input-group school-input-group">
+                        <label htmlFor="password" className="school-label">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            className="school-input"
+                        />
                     </div>
 
-                    <button type="submit" className="login-btn">
+                    <button type="submit" className="school-login-btn">
                         Login
                     </button>
 
-                    <p className="signup-text">
-                        Don’t have an account? <a href="#">Sign Up</a>
+                    <p className="school-signup-text">
+                        Don’t have an account? <a href="#" className="school-signup-link">Sign Up</a>
                     </p>
                 </form>
             </div>

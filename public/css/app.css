@@ -11966,6 +11966,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/* Main body style */
 body {
   margin: 0;
   padding: 0;
@@ -11976,20 +11977,14 @@ body {
   font-family: Arial, sans-serif;
   position: relative; /* Required for absolute positioning of children */
   overflow: hidden; /* Ensure no overflow */
-  background: linear-gradient(to top right, white 55%, #8635ac 45%); /* Diagonal gradient */
-}
-
-/* Container */
-.layout {
-  background: rgba(134, 83, 172, 0.8); /* Semi-transparent background for better visibility */
-  display: flex; /* Use Flexbox for layout */
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center; /* Center items vertically */
-  gap: 20px; /* Space between flex items */
+  background: linear-gradient(to top right, white 55%, hsl(225, 84%, 57%) 45%); /* Diagonal gradient */
 }
 
 /* Links section */
 .links {
+  position: absolute; /* Absolute positioning to place it at the top right */
+  top: 20px; /* Distance from the top of the viewport */
+  right: 20px; /* Distance from the right of the viewport */
   display: flex; /* Flex for links to align horizontally */
   gap: 15px; /* Space between links */
 }
@@ -12004,14 +11999,25 @@ body {
   text-decoration: underline; /* Underline on hover */
 }
 
+/* Container */
+.Home {
+  /* Removed background to allow the body background to show */
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  width: 100%; /* Full width to cover the area */
+  padding: 20px; /* Optional: Add padding around the container */
+}
+
 /* Heading */
 h1, .h1 {
   font-size: 56px; /* Set font size to 56px */
   color: #000; /* Color of the heading */
   margin: 0; /* Remove default margin */
-  flex: 1; /* Allow the heading to grow and take available space */
+  text-align: center; /* Center the heading */
 }
 
+/* Body */
 body {
   margin: 0;
   padding: 0;
@@ -12019,83 +12025,92 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: Arial, sans-serif;
-  position: relative; /* Required for absolute positioning of children */
-  overflow: hidden; /* Ensure no overflow */
-  background: linear-gradient(to top right, white 55%, #8635ac 45%); /* Diagonal gradient */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8; /* Light background for a clean look */
 }
 
-/* Container */
-.layout {
-  background: rgba(134, 83, 172, 0.8); /* Semi-transparent background for better visibility */
-  display: flex; /* Use Flexbox for layout */
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center; /* Center items vertically */
-  gap: 20px; /* Space between flex items */
+/* Login Container */
+.school-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.login-container {
-  background: #fff;
-  padding: 2rem;
+.school-login-container {
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 400px;
 }
 
-.login-form {
-  max-width: 400px;
-  width: 100%;
+/* Form Heading */
+.school-heading {
   text-align: center;
-}
-.login-form h2, .login-form .h2 {
-  margin-bottom: 1rem;
   font-size: 24px;
-  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
-.login-form .input-group {
-  margin-bottom: 1.5rem;
-  position: relative;
+
+/* Input Groups */
+.school-input-group {
+  margin-bottom: 20px;
 }
-.login-form .input-group label {
-  display: none;
-}
-.login-form .input-group .input-icon {
-  position: relative;
-}
-.login-form .input-group .input-icon input {
-  width: 100%;
-  padding: 0.75rem 2rem 0.75rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-}
-.login-form .input-group .input-icon .icon-user,
-.login-form .input-group .input-icon .icon-lock {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #555;
-}
-.login-form .login-btn {
-  width: 100%;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(0, 123, 255, 0.8705882353);
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.login-form .login-btn:hover {
-  background-color: #333;
-}
-.login-form .signup-text {
-  margin-top: 1rem;
+
+.school-label {
+  display: block;
   font-size: 14px;
+  margin-bottom: 8px;
+  color: #34495e;
 }
-.login-form .signup-text a {
-  color: rgba(0, 123, 255, 0.8705882353);
+
+.school-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #ecf0f1;
+  transition: border-color 0.3s ease;
+}
+
+.school-input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Login Button */
+.school-login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.school-login-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Signup Link */
+.school-signup-text {
+  text-align: center;
+  margin-top: 15px;
+  color: #7f8c8d;
+}
+
+.school-signup-link {
+  color: #3498db;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.school-signup-link:hover {
+  text-decoration: underline;
 }

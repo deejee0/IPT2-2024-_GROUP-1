@@ -1,10 +1,4 @@
-/* Heading */
-h1 {
-    font-size: 56px; /* Set font size to 56px */
-    color: #000; /* Color of the heading */
-    margin: 0; /* Remove default margin */
-    flex: 1; /* Allow the heading to grow and take available space */
-}
+/* Main body style */
 body {
     margin: 0;
     padding: 0;
@@ -15,24 +9,42 @@ body {
     font-family: Arial, sans-serif;
     position: relative; /* Required for absolute positioning of children */
     overflow: hidden; /* Ensure no overflow */
-    background: linear-gradient(
-        to top right,
-        white 55%,
-        #8635ac 45%
-    ); /* Diagonal gradient */
+    background: linear-gradient(to top right, white 55%, hsl(225, 84%, 57%) 45%); /* Diagonal gradient */
+}
+
+/* Links section */
+.links {
+    position: absolute; /* Absolute positioning to place it at the top right */
+    top: 20px; /* Distance from the top of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    display: flex; /* Flex for links to align horizontally */
+    gap: 15px; /* Space between links */
+}
+
+.links a {
+    color: white; /* Change link color to white */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Optional: Set font size */
+}
+
+.links a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Container */
-.layout {
-    background: rgba(
-        134,
-        83,
-        172,
-        0.8
-    ); /* Semi-transparent background for better visibility */
-
+.Home {
+    /* Removed background to allow the body background to show */
     display: flex; /* Use Flexbox for layout */
-    justify-content: flex-end; /* Align items to the right */
-    align-items: center; /* Center items vertically */
-    gap: 20px; /* Space between flex items */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width to cover the area */
+    padding: 20px; /* Optional: Add padding around the container */
+}
+
+/* Heading */
+h1 {
+    font-size: 56px; /* Set font size to 56px */
+    color: #000; /* Color of the heading */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the heading */
 }
