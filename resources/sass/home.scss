@@ -33,20 +33,11 @@ body {
 
 /* Container */
 .Home {
-    /* Removed background to allow the body background to show */
     display: flex; /* Use Flexbox for layout */
     flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items to the left */
     width: 100%; /* Full width to cover the area */
     padding: 20px; /* Optional: Add padding around the container */
-}
-
-/* Heading */
-h1 {
-    font-size: 56px; /* Set font size to 56px */
-    color: #000; /* Color of the heading */
-    margin: 0; /* Remove default margin */
-    text-align: center; /* Center the heading */
 }
 
 /* Welcome Message */
@@ -55,6 +46,9 @@ h1 {
     font-family: 'Helvetica Neue', sans-serif; /* Change to a nicer font */
     font-weight: bold; /* Make the font bold */
     text-transform: uppercase; /* Make all letters capital */
-    color: #333; /* Change color for contrast */
-    margin-bottom: 20px; /* Space below the message */
+    color: maroon; /* Change color to maroon */
+    margin: 0; /* Remove default margin */
+    position: absolute; /* Position it absolutely within the Home container */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
 }
