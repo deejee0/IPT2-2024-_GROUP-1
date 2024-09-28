@@ -8,6 +8,7 @@ export default function NavList() {
             <Link to="/about-us">About Us</Link>
             <Link to="/contact-us">Contact Us</Link>
             <Link to="/login">Login</Link>
+            <Link to="/SignUp">SignUp</Link>
         </div>
     );
 }

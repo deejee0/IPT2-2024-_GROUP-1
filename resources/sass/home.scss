@@ -48,3 +48,13 @@ h1 {
     margin: 0; /* Remove default margin */
     text-align: center; /* Center the heading */
 }
+
+/* Welcome Message */
+.welcome-message {
+    font-size: 48px; /* Font size for welcome message */
+    font-family: 'Helvetica Neue', sans-serif; /* Change to a nicer font */
+    font-weight: bold; /* Make the font bold */
+    text-transform: uppercase; /* Make all letters capital */
+    color: #333; /* Change color for contrast */
+    margin-bottom: 20px; /* Space below the message */
+}

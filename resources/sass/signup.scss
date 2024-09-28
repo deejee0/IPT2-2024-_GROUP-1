@@ -1,0 +1,86 @@
+/* signup.scss */
+
+/* General styles */
+.school-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.school-signup-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 400px;
+}
+
+/* Form styles */
+.school-heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Input styles */
+.school-input-group {
+    margin-bottom: 20px;
+}
+
+.school-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+.school-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s ease;
+}
+
+.school-input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Button styles */
+.school-signup-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.school-signup-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Login link styles */
+.school-login-text {
+    text-align: center;
+    margin-top: 15px;
+    color: #7f8c8d;
+}
+
+.school-login-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.school-login-link:hover {
+    text-decoration: underline;
+}
