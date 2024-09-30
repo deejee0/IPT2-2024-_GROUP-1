@@ -1,54 +1,100 @@
 /* Main body style */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin: 0; /* Remove margin to eliminate white space */
+    height: 100vh;  
+    display: grid;
+    padding: 0; /* Add padding to ensure no gaps */
+    background: url('https://media.canva.com/v2/image-resize/format:PNG/height:400/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FnRZUA%2FMAGSJXnRZUA%2F1%2Fp.png/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPe34jiX8KKKdYV5mL4f-U7Nv-ThvzLUad1yN8lPBekP&exp=1727634210&osig=AAAAAAAAAAAAAAAAAAAAAIkBk_hlr2UGfMkqixn6Fr6ezhD4wEV98aRV01vwCKiC&signer=media-rpc&x-canva-quality=screen') no-repeat center center fixed; /* Fixed background */
+    background-size: cover; /* Cover the entire body */
     font-family: Arial, sans-serif;
-    position: relative; /* Required for absolute positioning of children */
-    overflow: hidden; /* Ensure no overflow */
-    background: linear-gradient(to top right, white 75%, #30000B 25%); /* Diagonal gradient */
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    overflow: auto; /* Enable scrolling */
 }
 
-/* Links section */
-.links {
-    position: absolute; /* Absolute positioning to place it at the top right */
-    top: 20px; /* Distance from the top of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    display: flex; /* Flex for links to align horizontally */
-    gap: 15px; /* Space between links */
+/* Header container for logo and links */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Make the header fixed */
+    top: 0;
+    left: 20px;
+    right: 20px;
+    padding: 10px 0;
+    z-index: 2;
 }
 
-.links a {
-    color: white; /* Change link color to white */
-    text-decoration: none; /* Remove underline from links */
-    font-size: 18px; /* Optional: Set font size */
+/* Logo */
+.logo {
+    height: 100px;
+    width: auto;
 }
 
-.links a:hover {
-    text-decoration: underline; /* Underline on hover */
+/* Links at the top */
+.nav-links {
+    display: flex;
+    gap: 20px;
 }
 
-/* Container */
-.Home {
-    display: flex; /* Use Flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the left */
-    width: 100%; /* Full width to cover the area */
-    padding: 20px; /* Optional: Add padding around the container */
+.nav-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
 }
 
-/* Welcome Message */
-.welcome-message {
-    font-size: 48px; /* Font size for welcome message */
-    font-family: 'Times New Roman', serif; /* Change to Times New Roman */
-    font-weight: bold; /* Make the font bold */
-    text-transform: uppercase; /* Make all letters capital */
-    color: maroon; /* Change color to maroon */
-    margin: 0; /* Remove default margin */
-    position: absolute; /* Position it absolutely within the Home container */
-    top: 20px; /* Distance from the top */
-    left: 20px; /* Distance from the left */
+.nav-links a:hover {
+    color: #ddd;
+}
+
+/* School-themed section */
+.school-content {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    text-align: center; /* Center align text */
+    color: #fff;
+}
+
+.school-content h1 {
+    font-size: 64px; /* Make larger */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: gold; /* Gold color for the heading */
+    font-family: 'Times New Roman', serif; /* Change font to Times New Roman */
+}
+
+.school-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', serif; /* Change font to Times New Roman */
+}
+
+/* Adding extra height for testing scroll */
+.extra-content {
+    height: 2000px; /* Ensure there's extra content to scroll */
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+    .school-content {
+        margin-top: 160px; /* Adjust for smaller screens */
+        h1 {
+            font-size: 36px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
 }

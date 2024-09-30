@@ -1,4 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://use.fontawesome.com/releases/v6.5.2/css/all.css);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter&display=swap);
 @charset "UTF-8";
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
@@ -11968,157 +11973,330 @@ textarea.form-control-lg {
 }
 /* Main body style */
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0; /* Remove margin to eliminate white space */
   height: 100vh;
+  display: grid;
+  padding: 0; /* Add padding to ensure no gaps */
+  background: url("https://media.canva.com/v2/image-resize/format:PNG/height:400/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FnRZUA%2FMAGSJXnRZUA%2F1%2Fp.png/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPe34jiX8KKKdYV5mL4f-U7Nv-ThvzLUad1yN8lPBekP&exp=1727634210&osig=AAAAAAAAAAAAAAAAAAAAAIkBk_hlr2UGfMkqixn6Fr6ezhD4wEV98aRV01vwCKiC&signer=media-rpc&x-canva-quality=screen") no-repeat center center fixed; /* Fixed background */
+  background-size: cover; /* Cover the entire body */
   font-family: Arial, sans-serif;
-  position: relative; /* Required for absolute positioning of children */
-  overflow: hidden; /* Ensure no overflow */
-  background: linear-gradient(to top right, white 75%, #30000B 25%); /* Diagonal gradient */
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  overflow: auto; /* Enable scrolling */
 }
 
-/* Links section */
-.links {
-  position: absolute; /* Absolute positioning to place it at the top right */
-  top: 20px; /* Distance from the top of the viewport */
-  right: 20px; /* Distance from the right of the viewport */
-  display: flex; /* Flex for links to align horizontally */
-  gap: 15px; /* Space between links */
-}
-
-.links a {
-  color: white; /* Change link color to white */
-  text-decoration: none; /* Remove underline from links */
-  font-size: 18px; /* Optional: Set font size */
-}
-
-.links a:hover {
-  text-decoration: underline; /* Underline on hover */
-}
-
-/* Container */
-.Home {
-  display: flex; /* Use Flexbox for layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align items to the left */
-  width: 100%; /* Full width to cover the area */
-  padding: 20px; /* Optional: Add padding around the container */
-}
-
-/* Welcome Message */
-.welcome-message {
-  font-size: 48px; /* Font size for welcome message */
-  font-family: "Times New Roman", serif; /* Change to Times New Roman */
-  font-weight: bold; /* Make the font bold */
-  text-transform: uppercase; /* Make all letters capital */
-  color: maroon; /* Change color to maroon */
-  margin: 0; /* Remove default margin */
-  position: absolute; /* Position it absolutely within the Home container */
-  top: 20px; /* Distance from the top */
-  left: 20px; /* Distance from the left */
-}
-
-/* Body */
-body {
-  margin: 0;
-  padding: 0;
+/* Header container for logo and links */
+.header-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f4f8; /* Light background for a clean look */
+  position: fixed; /* Make the header fixed */
+  top: 0;
+  left: 20px;
+  right: 20px;
+  padding: 10px 0;
+  z-index: 2;
 }
 
-/* Login Container */
-.school-login {
+/* Logo */
+.logo {
+  height: 100px;
+  width: auto;
+}
+
+/* Links at the top */
+.nav-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  gap: 20px;
 }
 
-.school-login-container {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  width: 400px;
+.nav-links a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
 }
 
-/* Form Heading */
-.school-heading {
-  text-align: center;
+.nav-links a:hover {
+  color: #ddd;
+}
+
+/* School-themed section */
+.school-content {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to truly center */
+  text-align: center; /* Center align text */
+  color: #fff;
+}
+
+.school-content h1, .school-content .h1 {
+  font-size: 64px; /* Make larger */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: gold; /* Gold color for the heading */
+  font-family: "Times New Roman", serif; /* Change font to Times New Roman */
+}
+
+.school-content h3, .school-content .h3 {
   font-size: 24px;
-  margin-bottom: 20px;
-  color: #2c3e50;
+  margin-bottom: 15px;
+  font-family: "Times New Roman", serif; /* Change font to Times New Roman */
 }
 
-/* Input Groups */
-.school-input-group {
-  margin-bottom: 20px;
+/* Adding extra height for testing scroll */
+.extra-content {
+  height: 2000px; /* Ensure there's extra content to scroll */
 }
 
-.school-label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #34495e;
+/* Media Queries */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-links {
+    margin-top: 10px;
+  }
+  .school-content {
+    margin-top: 160px; /* Adjust for smaller screens */
+  }
+  .school-content h1, .school-content .h1 {
+    font-size: 36px;
+  }
+  .school-content h3, .school-content .h3 {
+    font-size: 20px;
+  }
+  .school-content p {
+    font-size: 16px;
+  }
 }
-
-.school-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #bdc3c7;
-  border-radius: 4px;
-  font-size: 16px;
+* {
   box-sizing: border-box;
-  background-color: #ecf0f1;
-  transition: border-color 0.3s ease;
 }
 
-.school-input:focus {
-  border-color: #3498db;
+body {
+  margin: 0; /* Remove margin to eliminate white space */
+  height: 100vh;
+  display: grid;
+  padding: 0; /* Add padding to ensure no gaps */
+  background: url("https://media.canva.com/v2/image-resize/format:PNG/height:400/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FnRZUA%2FMAGSJXnRZUA%2F1%2Fp.png/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAPe34jiX8KKKdYV5mL4f-U7Nv-ThvzLUad1yN8lPBekP&exp=1727634210&osig=AAAAAAAAAAAAAAAAAAAAAIkBk_hlr2UGfMkqixn6Fr6ezhD4wEV98aRV01vwCKiC&signer=media-rpc&x-canva-quality=screen") no-repeat center center fixed; /* Fixed background */
+  background-size: cover; /* Cover the entire body */
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  overflow: auto; /* Enable scrolling */
+}
+
+h1, .h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+span {
+  font-size: 12px;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.overlay {
+  background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0/cover;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateY(0);
+}
+
+.overlay-left {
+  transform: translateY(-20%);
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateY(100%);
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateY(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateY(20%);
+}
+
+.form-container form {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.form-container input {
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background: #ff445c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
   outline: none;
 }
 
-/* Login Button */
-.school-login-btn {
-  width: 100%;
-  padding: 12px;
-  background-color: #3498db;
-  border: none;
-  color: white;
-  font-size: 18px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+button.ghost {
+  background: transparent;
+  border-color: #fff;
 }
 
-.school-login-btn:hover {
-  background-color: #2980b9;
+/* Media Queries */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-links {
+    margin-top: 10px;
+  }
+  .school-content {
+    max-width: 90%;
+  }
+  .school-content h1, .school-content .h1 {
+    font-size: 36px;
+  }
+  .school-content h3, .school-content .h3 {
+    font-size: 20px;
+  }
+  .school-content p {
+    font-size: 16px;
+  }
 }
-
-/* Signup Link */
-.school-signup-text {
-  text-align: center;
-  margin-top: 15px;
-  color: #7f8c8d;
-}
-
-.school-signup-link {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.school-signup-link:hover {
-  text-decoration: underline;
-}
-
 /* signup.scss */
 /* General styles */
 .school-signup {
@@ -12203,4 +12381,180 @@ body {
 
 .school-login-link:hover {
   text-decoration: underline;
+}
+
+/* Reset default body styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+/* Dashboard layout to span entire height */
+.dashboard {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 260px; /* Sidebar width */
+  background-color: #003366; /* School theme color */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the content */
+  box-shadow: 2px 0 5px #2c2c2c; /* Add shadow for separation */
+}
+
+/* Sidebar title section with image */
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Style the logo image */
+.sidebar-title img {
+  width: 50px; /* Adjust the image size */
+  height: 50px; /* Keep image square */
+  margin-right: 15px; /* Space between image and text */
+  border-radius: 50%; /* Make the image circular */
+}
+
+/* Sidebar menu styles */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  width: 100%; /* Make the menu take the full sidebar width */
+}
+
+.sidebar-menu li {
+  margin-bottom: 15px; /* Add spacing between menu items */
+  text-align: center;
+}
+
+.sidebar-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0; /* Make the menu items larger */
+}
+
+.sidebar-menu a:hover {
+  text-decoration: underline;
+}
+
+/* Main content styles */
+.main-content {
+  flex-grow: 1; /* Take up remaining space */
+  padding: 40px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Specific style for "Welcome to the Dashboard" */
+.header h1, .header .h1 {
+  font-family: "Stencil Std", fantasy;
+}
+
+/* Logout button styles */
+.logout-btn {
+  padding: 10px 15px;
+  background-color: #8c0008;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background-color: darkred; /* Darker shade on hover */
+}
+
+/* Content container */
+.content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+
+/* Stats styles */
+.stats {
+  display: flex;
+  justify-content: space-around; /* Space out the stats */
+  margin-top: 20px;
+}
+
+.stat-item {
+  flex: 1; /* Each stat takes equal space */
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  background: #ecf0f1;
+  border-radius: 10px;
+}
+
+/* Applying font and bold style */
+.stat-item h3, .stat-item .h3 {
+  font-family: "Bookman", "URW Bookman L", serif;
+  font-weight: bold; /* Bold */
+  margin: 0;
+}
+
+.stat-item p {
+  font-size: 24px; /* Larger font for numbers */
+  font-weight: bold;
+}
+
+/* Recent notifications */
+.notifications {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e7f0f9; /* Light blue background */
+  border-radius: 10px;
+}
+
+/* Quick actions styles */
+.quick-actions {
+  display: flex;
+  justify-content: space-between; /* Space out quick actions */
+  margin-top: 20px;
+}
+
+.quick-action {
+  flex: 1; /* Each action takes equal space */
+  text-align: center;
+  padding: 20px;
+  background: #4caf50; /* Green background */
+  color: white;
+  border-radius: 10px;
+  margin: 10px; /* Space between actions */
+}
+
+.quick-action:hover {
+  background: #45a049; /* Darker green on hover */
+}
+
+/* Ensure full body background */
+html, body {
+  height: 100%; /* Ensure body takes up the full height */
+  background-color: white;
 }

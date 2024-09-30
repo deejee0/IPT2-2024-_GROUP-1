@@ -1,0 +1,175 @@
+/* Reset default body styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+/* Dashboard layout to span entire height */
+.dashboard {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 260px; /* Sidebar width */
+    background-color: #003366; /* School theme color */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the content */
+    box-shadow: 2px 0 5px #2c2c2c; /* Add shadow for separation */
+}
+
+/* Sidebar title section with image */
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Style the logo image */
+.sidebar-title img {
+    width: 50px; /* Adjust the image size */
+    height: 50px; /* Keep image square */
+    margin-right: 15px; /* Space between image and text */
+    border-radius: 50%; /* Make the image circular */
+}
+
+/* Sidebar menu styles */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    width: 100%; /* Make the menu take the full sidebar width */
+}
+
+.sidebar-menu li {
+    margin-bottom: 15px; /* Add spacing between menu items */
+    text-align: center;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0; /* Make the menu items larger */
+}
+
+.sidebar-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styles */
+.main-content {
+    flex-grow: 1; /* Take up remaining space */
+    padding: 40px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Specific style for "Welcome to the Dashboard" */
+.header h1 {
+    font-family: 'Stencil Std', fantasy;
+}
+
+/* Logout button styles */
+.logout-btn {
+    padding: 10px 15px;
+    background-color: #8c0008;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
+    background-color: darkred; /* Darker shade on hover */
+}
+
+/* Content container */
+.content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+/* Stats styles */
+.stats {
+    display: flex;
+    justify-content: space-around; /* Space out the stats */
+    margin-top: 20px;
+}
+
+.stat-item {
+    flex: 1; /* Each stat takes equal space */
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+}
+
+/* Applying font and bold style */
+.stat-item h3 {
+    font-family: 'Bookman', 'URW Bookman L', serif;
+    font-weight: bold; /* Bold */
+    margin: 0;
+}
+
+.stat-item p {
+    font-size: 24px; /* Larger font for numbers */
+    font-weight: bold;
+}
+
+/* Recent notifications */
+.notifications {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e7f0f9; /* Light blue background */
+    border-radius: 10px;
+}
+
+/* Quick actions styles */
+.quick-actions {
+    display: flex;
+    justify-content: space-between; /* Space out quick actions */
+    margin-top: 20px;
+}
+
+.quick-action {
+    flex: 1; /* Each action takes equal space */
+    text-align: center;
+    padding: 20px;
+    background: #4caf50; /* Green background */
+    color: white;
+    border-radius: 10px;
+    margin: 10px; /* Space between actions */
+}
+
+.quick-action:hover {
+    background: #45a049; /* Darker green on hover */
+}
+
+/* Ensure full body background */
+html, body {
+    height: 100%; /* Ensure body takes up the full height */
+    background-color: white;
+}
