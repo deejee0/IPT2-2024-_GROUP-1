@@ -13,22 +13,19 @@ export default function Login() {
 
     const handleSignup = (e) => {
         e.preventDefault();
-        // Save signup data (this could be local storage, backend, etc.)
         setSignupData({
             email: e.target.email.value,
             password: e.target.password.value,
         });
-        // Clear the signup form after saving
         e.target.reset();
-        toggleForm(); // Switch to login form
+        toggleForm();
     };
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Check credentials
         if (loginData.email === signupData.email && loginData.password === signupData.password) {
             alert("Login successfully");
-            navigate("/dashboard"); // Redirect to dashboard
+            navigate("/dashboard");
         } else {
             alert("Invalid email or password");
         }
@@ -73,7 +70,7 @@ export default function Login() {
                             onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
                             required 
                         />
-                        <a href="#">Forgot your password?</a>
+                        <Link to="#">Forgot your password?</Link>
                         <button type="submit">Sign In</button>
                     </form>
                 </div>

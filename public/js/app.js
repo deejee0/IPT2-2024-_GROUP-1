@@ -10211,15 +10211,159 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ AboutUs)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _NavList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavList */ "./resources/js/components/NavList.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 function AboutUs() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "layout AboutUs",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_NavList__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState2 = _slicedToArray(_useState, 2),
+    scrollingUp = _useState2[0],
+    setScrollingUp = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState4 = _slicedToArray(_useState3, 2),
+    lastScrollTop = _useState4[0],
+    setLastScrollTop = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleScroll = function handleScroll() {
+      var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+        setScrollingUp(false);
+      } else if (currentScrollTop < lastScrollTop) {
+        setScrollingUp(true);
+      }
+      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return function () {
+      return window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "AboutUs",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "header-container ".concat(scrollingUp ? 'visible' : 'hidden'),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        src: "https://media.canva.com/v2/image-resize/format:PNG/height:280/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FAmOLg%2FMAGSH1AmOLg%2F1%2Fp.png/watermark:F/width:677?csig=AAAAAAAAAAAAAAAAAAAAAPBPqBOQVZpfqbsVajHdMuVdR0DiwNvMyDdzL6ED4cUC&exp=1727614699&osig=AAAAAAAAAAAAAAAAAAAAAG7gjUuJdWVBKMNxaWLZ60oxLG76I7yOXGpVKGnCJ41i&signer=media-rpc&x-canva-quality=screen",
+        alt: "School Logo",
+        className: "logo"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "banner-container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        className: "banner-image",
+        src: "https://pbs.twimg.com/media/GY35EajbIAA_n3v?format=jpg&name=4096x4096",
+        alt: "Banner"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "values-container",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+        children: "OUR PURPOSE"
+      }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "mission-vision-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "value mission",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            className: "value-icon",
+            src: "https://pbs.twimg.com/media/GY51bb8bAAIOrS7?format=png&name=small",
+            alt: "Mission Icon"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            children: "MISSION"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "At Veritas Academia, our mission is to provide a holistic education that nurtures the intellectual, emotional, and social development of every student. We are committed to fostering a supportive and engaging learning environment that encourages exploration and innovation. Through a comprehensive curriculum, dedicated educators, and a focus on character development, we aim to cultivate critical thinkers and lifelong learners who are equipped with the skills and values necessary to thrive in a diverse and interconnected world. Together with our community, we inspire students to embrace challenges, celebrate diversity, and contribute positively to society."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "value vision",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            className: "value-icon",
+            src: "https://pbs.twimg.com/media/GY51bb3bAAElZGB?format=png&name=small",
+            alt: "Vision Icon"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            children: "VISION"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "To be a leading institution that nurtures the potential of every student by providing a dynamic and innovative learning environment. We strive to cultivate a community of lifelong learners who are well-equipped with the knowledge, critical thinking skills, and ethical values needed to succeed in an ever-evolving global society. Through a commitment to excellence in education, we aim to inspire creativity, foster diversity, and empower students to become compassionate, responsible leaders who contribute positively to the world around them."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "value core-values",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            className: "value-icon",
+            src: "https://pbs.twimg.com/media/GY51bb2asAAgQg2?format=png&name=small",
+            alt: "Core Values Icon"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            children: "CORE VALUES"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "Integrity, Excellence, and Community Engagement."
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "main-container",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "campus-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "campus-card",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            className: "campus-photo",
+            src: "https://pbs.twimg.com/media/GY5g7iMbAAAidyF?format=jpg&name=medium" // Replace with actual image URL
+            ,
+            alt: "Main Campus"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "description",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+            children: "Main Campus"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "Nestled in the vibrant heart of Butuan City, at P-8 Bancasi, Veritas Academia boasts a campus that harmoniously blends modern architecture with the natural beauty of its surroundings. The lush greenery and meticulously landscaped gardens create a serene and inspiring environment, making it an ideal setting for learning and personal growth."
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "library-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "library-card",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            className: "library-photo",
+            src: "https://pbs.twimg.com/media/GY5oNn4bAAM6hFy?format=jpg&name=medium" // Replace with actual image URL
+            ,
+            alt: "Library"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "description",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+            children: "Library"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "Our library is a haven for knowledge, equipped with vast resources that support students' academic needs. It provides a quiet space for study and collaboration, making it an essential part of the campus experience."
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("hr", {
+      className: "section-divider"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "president-message",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+        children: "President's Message"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: "Your president's message content goes here..."
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("footer", {
+      className: "footer",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "footer-logo",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "https://pbs.twimg.com/media/GY3_PShbsAAWrsS?format=png&name=small",
+          alt: "School Logo"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "footer-content",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: "\xA9 2024 Veritas Academia. All Rights Reserved."
+        })
+      })]
+    })]
   });
 }
 
@@ -10394,14 +10538,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
 function Example() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState2 = _slicedToArray(_useState, 2),
+    scrollingUp = _useState2[0],
+    setScrollingUp = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState4 = _slicedToArray(_useState3, 2),
+    lastScrollTop = _useState4[0],
+    setLastScrollTop = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleScroll = function handleScroll() {
+      var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Check if scrolling down
+      if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+        setScrollingUp(false);
+      } else if (currentScrollTop < lastScrollTop) {
+        setScrollingUp(true);
+      }
+      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop); // For Mobile or negative scrolling
+    };
+    window.addEventListener("scroll", handleScroll);
+    return function () {
+      return window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "Home",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "header-container",
+      className: "header-container ".concat(scrollingUp ? 'visible' : 'hidden'),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
         src: "https://media.canva.com/v2/image-resize/format:PNG/height:280/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FAmOLg%2FMAGSH1AmOLg%2F1%2Fp.png/watermark:F/width:677?csig=AAAAAAAAAAAAAAAAAAAAAPBPqBOQVZpfqbsVajHdMuVdR0DiwNvMyDdzL6ED4cUC&exp=1727614699&osig=AAAAAAAAAAAAAAAAAAAAAG7gjUuJdWVBKMNxaWLZ60oxLG76I7yOXGpVKGnCJ41i&signer=media-rpc&x-canva-quality=screen",
         alt: "School Logo",
@@ -10409,9 +10584,6 @@ function Example() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "nav-links",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-          to: "/about-us",
-          children: "About Us"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
           to: "/login",
           children: "Login"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
@@ -10421,14 +10593,76 @@ function Example() {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "school-content",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-        children: "Welcome to Veritas Academia"
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+        children: "Prepare for the future at Veritas Academia"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-        children: "Discover Your Future With Us"
+        children: "Discover exceptional programs designed to help you achieve your dreams"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+        to: "/about-us",
+        className: "about-us-button",
+        children: "Get to Know Us"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "extra-content"
-    }), " "]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "courses-offered",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+        children: "Veritas Academia's Top Programs"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "course-boxes",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "course-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            src: "https://media.licdn.com/dms/image/v2/C511BAQFAPbdHMEZBfQ/company-background_10000/company-background_10000/0/1584489046645/ama_university_cover?e=2147483647&v=beta&t=lyMW72b1qSgLFnLgKr0eH-LGF98MtARZOAuonb-IsE0",
+            alt: "Computer Studies"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "course-title",
+            children: "Computer Studies"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "course-description",
+            children: "Learn about software development, networking, and systems analysis."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "course-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            src: "https://lpubatangas.edu.ph/wp-content/uploads/2021/06/DSC_3773-scaled.jpg",
+            alt: "Engineering"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "course-title",
+            children: "Engineering"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "course-description",
+            children: "Explore various engineering disciplines including civil, mechanical, and electrical engineering."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "course-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            src: "https://media.philstar.com/photos/2023/06/20/5_2023-06-20_22-47-34.jpg",
+            alt: "Health Sciences"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "course-title",
+            children: "Health Sciences"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "course-description",
+            children: "Dive into health care practices and the science behind them."
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("footer", {
+      className: "footer",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "footer-logo",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "https://media.canva.com/v2/image-resize/format:PNG/height:280/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FAmOLg%2FMAGSH1AmOLg%2F1%2Fp.png/watermark:F/width:677?csig=AAAAAAAAAAAAAAAAAAAAAPBPqBOQVZpfqbsVajHdMuVdR0DiwNvMyDdzL6ED4cUC&exp=1727614699&osig=AAAAAAAAAAAAAAAAAAAAAG7gjUuJdWVBKMNxaWLZ60oxLG76I7yOXGpVKGnCJ41i&signer=media-rpc&x-canva-quality=screen",
+          alt: "School Logo"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "footer-content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: "P-8 Bancasi, Butuan City, Philippines"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: "Email: contact@veritasacademia.edu | Phone: +639 65982 3265"
+        })]
+      })]
+    })]
   });
 }
 
@@ -10446,6 +10680,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Login)
 /* harmony export */ });
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -10485,21 +10720,18 @@ function Login() {
   };
   var handleSignup = function handleSignup(e) {
     e.preventDefault();
-    // Save signup data (this could be local storage, backend, etc.)
     setSignupData({
       email: e.target.email.value,
       password: e.target.password.value
     });
-    // Clear the signup form after saving
     e.target.reset();
-    toggleForm(); // Switch to login form
+    toggleForm();
   };
   var handleLogin = function handleLogin(e) {
     e.preventDefault();
-    // Check credentials
     if (loginData.email === signupData.email && loginData.password === signupData.password) {
       alert("Login successfully");
-      navigate("/dashboard"); // Redirect to dashboard
+      navigate("/dashboard");
     } else {
       alert("Invalid email or password");
     }
@@ -10603,8 +10835,8 @@ function Login() {
               }));
             },
             required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: "#",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "#",
             children: "Forgot your password?"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
             type: "submit",
