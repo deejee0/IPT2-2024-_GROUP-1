@@ -1,0 +1,77 @@
+/* Additional styles for headline */
+.nav-container {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center items horizontally for the header */
+    height: auto; /* Allow height to be automatic based on content */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Optional: add padding for better spacing */
+    overflow: hidden; /* Prevent overflow from breaking layout */
+}
+
+/* Adjust headline styles if necessary */
+.headline {
+    color: #520303; /* Set headline color */
+    font-size: 50px; /* Increased font size for better visibility */
+    text-align: center; /* Center headline text */
+    margin-top: 0; /* Remove any top margin */
+    
+    /* Text trace effect */
+    text-shadow: 
+        -1px -1px 0px white,  
+        1px -1px 0px white,
+        -1px 1px 0px white,
+        1px 1px 0px white; /* Create a white outline effect */
+}
+
+/* Common styles for both image sections */
+.image-section {
+    display: flex;              /* Use flexbox for layout */
+    align-items: center;         /* Center items vertically */
+    margin-top: 20px;            /* Space between sections */
+}
+
+/* Left positioning for the default image section */
+.image-section.left {
+    justify-content: flex-start; /* Ensure left alignment */
+}
+
+/* Right positioning for the additional image section */
+.image-section.right {
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Styles for the image container */
+.image-container {
+    margin: 0 20px; /* Space between image and vision text */
+}
+
+/* Styles for the decorative image */
+.decorative-image {
+    width: 246px; /* Set width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 20px; /* Smooth the edges */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); /* Optional shadow effect for better visibility */
+}
+
+/* Styles for the vision container */
+.vision-container {
+    max-width: 600px; /* Set a max width for better readability */
+}
+
+/* Styles for the vision title */
+.vision-title {
+    font-size: 24px; /* Font size for the vision title */
+    font-weight: bold; /* Make the title bold */
+    color: #520303; /* Same color as the headline for consistency */
+    margin-bottom: 10px; /* Space between title and text */
+}
+
+/* Styles for the vision text */
+.vision-text {
+    color: #333; /* Set text color */
+    font-size: 18px; /* Font size for the vision text */
+    line-height: 1.5; /* Line height for better readability */
+    text-align: justify; /* Justify the text */
+}

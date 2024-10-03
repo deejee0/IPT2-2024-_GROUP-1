@@ -7,6 +7,7 @@ import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
 import Login from "./Login";
 import SignUp from "./SignUp"; // Import the SignUp component
+import ReadMore from "./ReadMore";
 
 export default function Routers() {
     return (
@@ -17,6 +18,9 @@ export default function Routers() {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} /> {/* Add route for SignUp */}
+                <Route path="/read-more" element={<ReadMore />} />
+
+
             </Routes>
         </Router>
     );
