@@ -26,7 +26,7 @@ export default function Example() {
         <div className="Home">
             <div className={`header-container ${scrollingUp ? 'visible' : 'hidden'}`}>
                 <img
-                    src="https://media.canva.com/v2/image-resize/format:PNG/height:280/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FAmOLg%2FMAGSH1AmOLg%2F1%2Fp.png/watermark:F/width:677?csig=AAAAAAAAAAAAAAAAAAAAAPBPqBOQVZpfqbsVajHdMuVdR0DiwNvMyDdzL6ED4cUC&exp=1727614699&osig=AAAAAAAAAAAAAAAAAAAAAG7gjUuJdWVBKMNxaWLZ60oxLG76I7yOXGpVKGnCJ41i&signer=media-rpc&x-canva-quality=screen"
+                    src="https://pbs.twimg.com/media/GY8kPUvbQAAA3Ik?format=png&amp;name=900x900" 
                     alt="School Logo"
                     className="logo"
                 />
@@ -76,7 +76,7 @@ export default function Example() {
             <footer className="footer">
                 <div className="footer-logo">
                     <img
-                        src="https://media.canva.com/v2/image-resize/format:PNG/height:280/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FAmOLg%2FMAGSH1AmOLg%2F1%2Fp.png/watermark:F/width:677?csig=AAAAAAAAAAAAAAAAAAAAAPBPqBOQVZpfqbsVajHdMuVdR0DiwNvMyDdzL6ED4cUC&exp=1727614699&osig=AAAAAAAAAAAAAAAAAAAAAG7gjUuJdWVBKMNxaWLZ60oxLG76I7yOXGpVKGnCJ41i&signer=media-rpc&x-canva-quality=screen"
+                        src="https://pbs.twimg.com/media/GY8kPUvbQAAA3Ik?format=png&amp;name=900x900" 
                         alt="School Logo"
                     />
                 </div>
