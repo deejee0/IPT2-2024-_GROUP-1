@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.ContactUsPage {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-y: auto;
+    min-height: 100vh;
+    background: url('https://pbs.twimg.com/media/GY53AhVbAAEownF?format=png&name=large') no-repeat center center fixed;
+    background-size: cover;
+
+    // Header Wrap
+    .contact-header-wrap {
+        background-color: #580e14;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+
+        .logo {
+            height: 80px;
+            transition: height 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .contact-nav-links {
+            display: flex;
+            gap: 30px;
+            margin-right: 20px;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: 600;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: #FFD700;
+                }
+            }
+        }
+    }
+
+    // Center Wrap
+    .contact-center-wrap {
+        background: url('https://pbs.twimg.com/media/GZdM0rea8AE_1dW?format=jpg&name=4096x4096') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 20px;
+        text-align: center;
+
+        p {
+            max-width: 700px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #fff;
+            margin: 0 auto;
+        }
+    }
+
+    // Contact Heading
+    .contact-heading {
+        text-align: left;
+        font-size: 25px;
+        color: #580e14;
+        font-weight: 700;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // Separation Line
+    .contact-divider {
+        width: 80%;
+        margin: 20px auto;
+        border: 0;
+        border-top: 2px solid #580e14;
+    }
+
+    // Contact Details
+    .contact-details {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+
+        .contact-item {
+            margin-bottom: 20px;
+
+            h3 {
+                font-size: 20px;
+                color: #83000c;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.6;
+                color: #333;
+
+                a {
+                    color: #580e14;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    // Submit Ticket Section
+    .submit-ticket {
+        width: 80%;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        text-align: center;
+
+        h3 {
+            font-size: 24px;
+            color: #83000c;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .ticket-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .ticket-input, .ticket-textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #580e14;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            .ticket-button {
+                background-color: #83000c;
+                color: #fff;
+                border: none;
+                padding: 10px;
+                font-size: 18px;
+                font-weight: 700;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: #a00012;
+                }
+            }
+        }
+    }
+
+    // Footer
+    .contact-footer {
+        background-color: #580e14;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+
+        .footer-logo {
+            img {
+                width: auto;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .footer-content {
+            p {
+                margin: 5px 0;
+            }
+        }
+    }
+}

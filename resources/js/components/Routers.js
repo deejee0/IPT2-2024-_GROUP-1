@@ -8,6 +8,8 @@ import ContactUs from "./ContactUs";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import SignUp from "./SignUp"; // Import the SignUp component
+import Enlistment from "./Enlistment"; // Make sure this matches your file name exactly
+import Students from "./Students"; // Make sure this matches your file name exactly
 
 export default function Routers() {
     return (
@@ -18,7 +20,9 @@ export default function Routers() {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/signup" element={<SignUp />} /> {/* Add route for SignUp */}
+                <Route path="/enlistment" element={<Enlistment />} /> {/* Lowercased path */}
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/students" element={<Students />} />
             </Routes>
         </Router>
     );

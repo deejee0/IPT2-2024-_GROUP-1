@@ -1,175 +1,408 @@
-/* Reset default body styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100%;
-}
-
-/* Dashboard layout to span entire height */
-.dashboard {
+/* SCSS for Fully Rounded Sidebar with Mobile-First Approach, Statistic Boxes, and Main Content */
+.rounded-dashboard-container {
     display: flex;
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
-}
-
-/* Sidebar styles */
-.sidebar {
-    width: 260px; /* Sidebar width */
-    background-color: #003366; /* School theme color */
-    color: white;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    overflow: hidden;
+  
+    &.collapsed-sidebar {
+      .rounded-sidebar {
+        transform: translateX(-110%);
+      }
+  
+      .rounded-main-content {
+        margin-left: 10px;
+      }
+    }
+  
+    .toggle-sidebar-button {
+      position: fixed;
+      top: 20px;
+      left: 270px;
+      background: #a00012;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 101;
+      transition: left 0.3s ease;
+  
+      &:hover {
+        background: #ff3d47;
+      }
+  
+      @media (min-width: 769px) {
+        display: none;
+      }
+  
+      @media (max-width: 768px) {
+        left: 20px;
+        display: block;
+      }
+    }
+  }
+  
+  .rounded-sidebar {
+    background-color: #a00012;
+    color: #fff;
+    width: 250px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align the content */
-    box-shadow: 2px 0 5px #2c2c2c; /* Add shadow for separation */
-}
-
-/* Sidebar title section with image */
-.sidebar-title {
-    display: flex;
     align-items: center;
-    justify-content: center; /* Center the content */
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    position: fixed;
+    z-index: 100;
+    height: 100vh; /* Adjusted height to cover the full viewport height */
+    justify-content: space-between; /* Space between logo, links, and bottom links */
+
+
+
+    @media (max-width: 768px) {
+        transform: translateX(-110%);
+    }
 }
 
-/* Style the logo image */
-.sidebar-title img {
-    width: 50px; /* Adjust the image size */
-    height: 50px; /* Keep image square */
-    margin-right: 15px; /* Space between image and text */
-    border-radius: 50%; /* Make the image circular */
-}
+  
+    .rounded-logo-section {
+      text-align: center;
+      margin-bottom: 0;
+  
+      .rounded-logo {
+        height: 80px;
+        border-radius: 50%;
+      }
+  
+      .rounded-separator {
+        width: calc(100% + 40px);
+        border-top: 2px solid white;
+        margin: 20px -20px;
+      }
+    }
+  
+    .rounded-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      flex-grow: 1;
+      align-items: flex-start;
+      margin-top: 20px;
+      padding-left: 20px;
+  
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 300;
+        transition: color 0.3s, background 0.3s;
+        padding: 8px 15px;
+        border-radius: 8px;
+        width: calc(100% - 20px);
+        display: flex;
+        align-items: center;
+  
+        &:hover {
+          color: #ffd700;
+          background: rgba(255, 255, 255, 0.1);
+        }
+  
+        .link-icon {
+          margin-right: 10px;
+          vertical-align: middle;
+          height: 24px;
+          width: 24px;
+        }
+      }
+  
+      @media (max-width: 768px) {
+        align-items: center;
+        padding-left: 10px;
+  
+        a {
+          justify-content: center;
+        }
+      }
+    }
+  
+    .rounded-bottom-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      padding-left: 20px;
+  
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 300;
+        transition: color 0.3s, background 0.3s;
+        padding: 8px 15px;
+        border-radius: 8px;
+        width: calc(100% - 20px);
+        display: flex;
+        align-items: center;
+  
+        &:hover {
+          color: #ffd700;
+          background: rgba(255, 255, 255, 0.1);
+        }
+  
+        .link-icon {
+          margin-right: 10px;
+          vertical-align: middle;
+          height: 24px;
+          width: 24px;
+        }
+      }
+  
+      @media (max-width: 768px) {
+        align-items: center;
+        padding-left: 10px;
+  
+        a {
+          justify-content: center;
+        }
+      }
+    }
 
-/* Sidebar menu styles */
-.sidebar-menu {
-    list-style: none;
-    padding: 0;
-    width: 100%; /* Make the menu take the full sidebar width */
-}
+  
+    .rounded-main-content {
+        flex: 1;
+        padding: 0 20px 20px; /* Adjusted padding to remove extra top padding */
+        margin-left: 250px; /* Align with sidebar width */
+        margin-top: 0; /* Remove any extra margin on top */
+        transition: margin-left 0.3s ease;
+        background: url('https://pbs.twimg.com/media/GY53AhVbAAEownF?format=png&name=large') no-repeat center center;
+        background-size: cover; /* Apply the background image across the entire main content */
+    
+        .rounded-upper-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color:transparent;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0; /* Make sure there's no margin */
+            border-radius: 0; /* Make sure it's not rounded */
+            margin-left: 0px;
 
-.sidebar-menu li {
-    margin-bottom: 15px; /* Add spacing between menu items */
-    text-align: center;
-}
-
-.sidebar-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    padding: 10px 0; /* Make the menu items larger */
-}
-
-.sidebar-menu a:hover {
-    text-decoration: underline;
-}
-
-/* Main content styles */
-.main-content {
-    flex-grow: 1; /* Take up remaining space */
-    padding: 40px;
-    background-color: #f9f9f9; /* Light background for contrast */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header styles */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-/* Specific style for "Welcome to the Dashboard" */
-.header h1 {
-    font-family: 'Stencil Std', fantasy;
-}
-
-/* Logout button styles */
-.logout-btn {
-    padding: 10px 15px;
-    background-color: #8c0008;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.logout-btn:hover {
-    background-color: darkred; /* Darker shade on hover */
-}
-
-/* Content container */
-.content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex-grow: 1;
-}
-
-/* Stats styles */
-.stats {
-    display: flex;
-    justify-content: space-around; /* Space out the stats */
-    margin-top: 20px;
-}
-
-.stat-item {
-    flex: 1; /* Each stat takes equal space */
-    text-align: center;
-    margin: 10px;
-    padding: 20px;
-    background: #ecf0f1;
-    border-radius: 10px;
-}
-
-/* Applying font and bold style */
-.stat-item h3 {
-    font-family: 'Bookman', 'URW Bookman L', serif;
-    font-weight: bold; /* Bold */
-    margin: 0;
-}
-
-.stat-item p {
-    font-size: 24px; /* Larger font for numbers */
-    font-weight: bold;
-}
-
-/* Recent notifications */
-.notifications {
-    margin-top: 20px;
-    padding: 15px;
-    background: #e7f0f9; /* Light blue background */
-    border-radius: 10px;
-}
-
-/* Quick actions styles */
-.quick-actions {
-    display: flex;
-    justify-content: space-between; /* Space out quick actions */
-    margin-top: 20px;
-}
-
-.quick-action {
-    flex: 1; /* Each action takes equal space */
-    text-align: center;
-    padding: 20px;
-    background: #4caf50; /* Green background */
-    color: white;
-    border-radius: 10px;
-    margin: 10px; /* Space between actions */
-}
-
-.quick-action:hover {
-    background: #45a049; /* Darker green on hover */
-}
-
-/* Ensure full body background */
-html, body {
-    height: 100%; /* Ensure body takes up the full height */
-    background-color: white;
-}
+            .dashboard-title {
+                font-size: 24px;
+                font-weight: 600;
+                color: #580e14;
+            }
+    
+            .dashboard-search {
+                flex: 1;
+                margin: 0 20px;
+                text-align: center;
+    
+                input {
+                    width: 100%; /* Use full width */
+                    max-width: 700px; /* Limit width to avoid overly large input */
+                    padding: 10px;
+                    border-radius: 20px;
+                    border: 1px solid #ccc;
+                    font-size: 16px;
+    
+                    @media (max-width: 768px) {
+                        width: 100%; /* Ensure the input takes full width in mobile */
+                    }
+                }
+            }
+    
+            .dashboard-icons {
+                display: flex;
+                gap: 20px;
+    
+                .notif-icon {
+                    height: 28px;
+                    width: 28px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+    
+                .profile-icon {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    cursor: pointer;
+    
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+  
+    /* Statistic Boxes Section */
+    .rounded-statistics-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 30px;
+  
+      .stat-box {
+        flex: 1;
+        background-color: #eaeaea;
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+  
+        .stat-icon {
+          width: 48px;
+          height: 48px;
+          margin-bottom: 10px;
+        }
+  
+        .stat-text {
+          font-size: 18px;
+          font-weight: 500;
+          color: #333;
+          margin-bottom: 5px;
+        }
+  
+        .stat-number {
+          font-size: 24px;
+          font-weight: 600;
+          color: #580e14;
+        }
+      }
+    }
+  
+    /* Exam Schedule Section */
+    .exam-schedule-container {
+      margin-top: 40px;
+      background-color: #eaeaea;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  
+      .exam-schedule-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #580e14;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+  
+        .see-all-link {
+          font-size: 16px;
+          font-weight: 400;
+          color: #888;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+            color: #580e14;
+          }
+        }
+      }
+  
+      .exam-schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+  
+        th, td {
+          padding: 10px;
+          text-align: left;
+          font-size: 16px;
+        }
+  
+        th {
+          color: #888;
+          font-weight: 600;
+        }
+  
+        td {
+          color: #333;
+  
+          strong {
+            color: #580e14;
+          }
+        }
+  
+        tr:not(:last-child) {
+          border-bottom: 1px solid #ddd;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      padding: 10px;
+      margin-left: 20px;
+  
+      .rounded-upper-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+  
+      .rounded-statistics-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+  
+      .exam-schedule-container {
+        padding: 10px;
+      }
+    }
+  }
+/* Announcements Section */
+.announcements-container {
+    margin-top: 40px; /* Space above the announcements section */
+    background-color: #f4f4f4; /* Light background color to differentiate */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Padding for inner content */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  
+    .announcements-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #580e14; /* Darker color to match the design */
+      margin-bottom: 20px; /* Space between title and announcements */
+    }
+  
+    .announcement {
+      font-size: 16px;
+      color: #333; /* Main content color */
+      padding: 10px 0; /* Padding between each announcement */
+      border-bottom: 1px solid #ddd; /* Divider line between announcements */
+      
+      &:last-child {
+        border-bottom: none; /* Remove the bottom border from the last item */
+      }
+  
+      strong {
+        color: #a00012; /* Highlight important parts of the announcement */
+      }
+    }
+  }
+  
+  /* Mobile adjustments for announcements section */
+  @media (max-width: 768px) {
+    .announcements-container {
+      padding: 15px;
+      .announcements-title {
+        font-size: 20px;
+      }
+      .announcement {
+        font-size: 14px;
+      }
+    }
+  }
+  

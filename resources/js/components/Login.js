@@ -3,27 +3,12 @@ import { useState } from "react";
 
 export default function Login() {
     const navigate = useNavigate();
-    const [signupData, setSignupData] = useState({ email: "", password: "" });
     const [loginData, setLoginData] = useState({ email: "", password: "" });
-
-    const toggleForm = () => {
-        const container = document.getElementById("container");
-        container.classList.toggle("right-panel-active");
-    };
-
-    const handleSignup = (e) => {
-        e.preventDefault();
-        setSignupData({
-            email: e.target.email.value,
-            password: e.target.password.value,
-        });
-        e.target.reset();
-        toggleForm();
-    };
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        if (loginData.email === signupData.email && loginData.password === signupData.password) {
+        if (loginData.email === "darwin@veritas.edu.com" && loginData.password === "admin") {
             alert("Login successfully");
             navigate("/dashboard");
         } else {
@@ -32,62 +17,53 @@ export default function Login() {
     };
 
     return (
-        <div className="school-login">
-            <div className="container" id="container">
-                <div className="form-container sign-up-container">
-                    <form onSubmit={handleSignup}>
-                        <h1>Create Account</h1>
-                        <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <span>or use your email for registration</span>
-                        <input type="text" placeholder="Name" />
-                        <input type="email" name="email" placeholder="Email" required />
-                        <input type="password" name="password" placeholder="Password" required />
-                        <button type="submit">Sign Up</button>
-                    </form>
-                </div>
-                <div className="form-container sign-in-container">
-                    <form onSubmit={handleLogin}>
-                        <h1>Sign in</h1>
-                        <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <span>or use your account</span>
-                        <input 
-                            type="email" 
-                            placeholder="Email" 
-                            onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                            required 
-                        />
-                        <input 
-                            type="password" 
-                            placeholder="Password" 
+        <div className="unique-login-page">
+            {/* Smoke Animation Div */}
+            <div className="smoke-animation"></div>
+
+            {/* Login Container */}
+            <div className="unique-login-container">
+                <form onSubmit={handleLogin} className="unique-login-form">
+                    <img
+                        src="https://pbs.twimg.com/media/GZb0u-uasAIQVPD?format=png&amp;name=360x360"
+                        alt="Logo"
+                        className="login-logo"
+                    />
+                    <h1>Login to Dashboard</h1>
+
+                    <input
+                        type="email"
+                        placeholder="Username"
+                        value={loginData.email}
+                        onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
+                        required
+                    />
+
+                    <div className="password-container">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Password"
+                            value={loginData.password}
                             onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                            required 
+                            required
                         />
-                        <Link to="#">Forgot your password?</Link>
-                        <button type="submit">Sign In</button>
-                    </form>
-                </div>
-                <div className="overlay-container">
-                    <div className="overlay">
-                        <div className="overlay-panel overlay-left">
-                            <h1>Welcome Back!</h1>
-                            <p>To keep connected with us please login with your personal info</p>
-                            <button className="ghost" id="signIn" onClick={toggleForm}>Sign In</button>
-                        </div>
-                        <div className="overlay-panel overlay-right">
-                            <h1>Hello, Friend!</h1>
-                            <p>Enter your personal details and start your journey with us</p>
-                            <button className="ghost" id="signUp" onClick={toggleForm}>Sign Up</button>
-                        </div>
+                        <button
+                            type="button"
+                            className="toggle-password"
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? "Hide" : "Show"}
+                        </button>
                     </div>
-                </div>
+
+                    <div className="unique-login-options">
+                        <label>
+                            <input type="checkbox" /> Remember me
+                        </label>
+                        <Link to="#">Forgot your password?</Link>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
             </div>
         </div>
     );
